@@ -2,14 +2,8 @@ package shape;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.awt.Color;
-import java.awt.GradientPaint;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-
-import job.Graphic;
  
 
 
@@ -69,34 +63,5 @@ public class IJobImpl extends JPanel implements IJob {
 		super.paintComponent(g);
 		drawShape(g);
 		
-	}
-	
-	public static void main(String[] args) {
-
-	    JFrame window = new JFrame("Test dessin");
-
-	    IJobImpl drawingPanel = new IJobImpl();
-
-	    Square square1 = new Square(50, 200, 200);
-	    drawingPanel.addShape(1, square1);
-
-	    Square square2 = new Square(65, 200, 50);
-	    drawingPanel.addShape(2, square2);
-         
-        Circle circle1 = new Circle(20, 30,50);
-        drawingPanel.addShape(3, circle1);
-        Point p = new Point(100, 150);
-        Circle circle2 = new Circle(15, p);
-        drawingPanel.addShape(4, circle2);
-
-        Circle circle3 = new Circle(30, 300, 300);
-        drawingPanel.addShape(5, circle3);
-        
-        window.add(drawingPanel);
-
-	    window.setSize(800, 600);
-	    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    window.setLocationRelativeTo(null);
-	    window.setVisible(true);
 	}
 }
