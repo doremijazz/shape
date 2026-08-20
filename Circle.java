@@ -24,7 +24,7 @@ public class Circle extends Shape{
 
     public void setRadius(double radius) {
         if (radius < 0) {
-            radius = 1;
+            this.radius = 1;
         } else {
             this.radius = radius;
         }
@@ -45,7 +45,6 @@ public class Circle extends Shape{
 
 	@Override
 	public int getSide() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 }
