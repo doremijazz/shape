@@ -42,4 +42,10 @@ public class Circle extends Shape{
     public String toString() {
         return "Circle : radius = " + radius + super.toString();
     }
+
+	@Override
+	public int getSide() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

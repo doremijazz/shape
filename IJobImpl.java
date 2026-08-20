@@ -7,10 +7,13 @@ import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import job.Graphic;
  
 
 
-public class IJobImpl implements IJob {
+public class IJobImpl extends JPanel implements IJob {
 	private Map<Integer, Shape> shapes;
 
     public IJobImpl() {
@@ -38,17 +41,15 @@ public class IJobImpl implements IJob {
         shape.getCenter().setX(x);
         shape.getCenter().setY(y);
     }
-
+    
+    
     @Override
-    public void drawShape() {
-    	Graphic g = new Graphic();
-    	super.paint(g);
-        // TODO Auto-generated method stub
+    public void drawShape(Graphics g) {
     	for (Shape s : shapes.values())
     	{
     		if (s instanceof Square)
     		{
-    			g.drawRect(s.getCenter().getX(),s.getCenter().getY(),s.getSide(),s.getSide());
+				g.drawRect(s.getCenter().getX(),s.getCenter().getY(),s.getSide(),s.getSide());
     		}
     	}
     }
@@ -59,4 +60,31 @@ public class IJobImpl implements IJob {
             System.out.println(s);
         }
     }
+
+	@Override
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		drawShape(g);
+		
+	}
+	
+	public static void main(String[] args) {
+
+	    JFrame window = new JFrame("Test dessin");
+
+	    IJobImpl drawingPanel = new IJobImpl();
+
+	    Square square1 = new Square(50, 200, 200);
+	    drawingPanel.addShape(1, square1);
+
+	    Square square2 = new Square(65, 200, 50);
+	    drawingPanel.addShape(2, square2);
+
+	    window.add(drawingPanel);
+
+	    window.setSize(800, 600);
+	    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    window.setLocationRelativeTo(null);
+	    window.setVisible(true);
+	}
 }
