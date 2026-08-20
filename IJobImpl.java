@@ -51,6 +51,9 @@ public class IJobImpl extends JPanel implements IJob {
     		{
 				g.drawRect(s.getCenter().getX(),s.getCenter().getY(),s.getSide(),s.getSide());
     		}
+            else if(s instanceof Circle){
+                g.fillOval(s.getCenter().getX(),s.getCenter().getY() , s.getRadius(), s.getRadius());
+            }
     	}
     }
 
@@ -81,6 +84,9 @@ public class IJobImpl extends JPanel implements IJob {
 	    drawingPanel.addShape(2, square2);
 
 	    window.add(drawingPanel);
+         
+        Circle circle1 = new Circle(20, 30,50);
+        drawingPanel.addShape(3, circle1);
 
 	    window.setSize(800, 600);
 	    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
