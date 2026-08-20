@@ -1,14 +1,14 @@
 package shape;
 
 public class Circle extends Shape{
-	private double radius;
+	private int radius;
 
-    public Circle(double radius, int x, int y) {
+    public Circle(int radius, int x, int y) {
         super(x, y);
         setRadius(radius);
     }
 
-    public Circle(double radius, Point center) {
+    public Circle(int radius, Point center) {
         super(center);
         setRadius(radius);
     }
@@ -18,11 +18,11 @@ public class Circle extends Shape{
         setRadius(1);
     }
 
-    public double getRadius() {
+    public int getRadius() {
         return radius;
     }
 
-    public void setRadius(double radius) {
+    public void setRadius(int radius) {
         if (radius < 0) {
             this.radius = 1;
         } else {

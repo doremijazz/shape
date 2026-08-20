@@ -82,11 +82,11 @@ public class IJobImpl extends JPanel implements IJob {
 
 	    Square square2 = new Square(65, 200, 50);
 	    drawingPanel.addShape(2, square2);
-
-	    window.add(drawingPanel);
          
         Circle circle1 = new Circle(20, 30,50);
         drawingPanel.addShape(3, circle1);
+        
+        window.add(drawingPanel);
 
 	    window.setSize(800, 600);
 	    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
