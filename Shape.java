@@ -1,6 +1,6 @@
 package shape;
 
-public class Shape {
+public abstract class Shape {
 	private Point center;
 
     public Shape(int x, int y) {
@@ -19,4 +19,5 @@ public class Shape {
     public String toString() {
         return " Shape [center = " + center + "]";
     }
+    public abstract int getSide();
 }

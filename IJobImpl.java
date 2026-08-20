@@ -2,6 +2,13 @@ package shape;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.awt.Color;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.JFrame;
+ 
+
 
 public class IJobImpl implements IJob {
 	private Map<Integer, Shape> shapes;
@@ -34,7 +41,16 @@ public class IJobImpl implements IJob {
 
     @Override
     public void drawShape() {
+    	Graphic g = new Graphic();
+    	super.paint(g);
         // TODO Auto-generated method stub
+    	for (Shape s : shapes.values())
+    	{
+    		if (s instanceof Square)
+    		{
+    			g.drawRect(s.getCenter().getX(),s.getCenter().getY(),s.getSide(),s.getSide());
+    		}
+    	}
     }
 
     @Override
