@@ -85,6 +85,12 @@ public class IJobImpl extends JPanel implements IJob {
          
         Circle circle1 = new Circle(20, 30,50);
         drawingPanel.addShape(3, circle1);
+        Point p = new Point(100, 150);
+        Circle circle2 = new Circle(15, p);
+        drawingPanel.addShape(4, circle2);
+
+        Circle circle3 = new Circle(30, 300, 300);
+        drawingPanel.addShape(5, circle3);
         
         window.add(drawingPanel);
 
