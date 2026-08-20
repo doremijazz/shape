@@ -1,27 +1,32 @@
 package shape;
 
 public class Square extends Shape {
-	private int side;
+	private double side;
 
     public Square(int side, int x, int y) {
         super(x, y);
         this.setSide(side);
     }
 
-    public Square(int side, Point center) {
+    public Square(double d, Point center) {
         super(center);
-        this.setSide(side);
+        this.setSide(d);
     }
 
-    public int getSide() {
+    public Square(double d, int x, int y) {
+    	super(x,y);
+		this.setSide(d);
+	}
+
+	public double getSide() {
         return side;
     }
 
-    public void setSide(int side) {
-        if (side < 0) {
-            side = 1;
+    public void setSide(double d) {
+        if (d < 0) {
+            d = 1;
         } else {
-            this.side = side;
+            this.side = d;
         }
     }
 
