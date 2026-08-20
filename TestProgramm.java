@@ -9,31 +9,33 @@ public class TestProgramm {
 
 	    IJobImpl drawingPanel = new IJobImpl();
 
+        ShapeList shapes = new ShapeList();
+
 	    Square square1 = new Square(50, 200, 200);
-	    drawingPanel.addShape(1, square1);
+	    shapes.addShape(1, square1);
 
 	    Square square2 = new Square(65, 200, 50);
-	    drawingPanel.addShape(2, square2);
+	    shapes.addShape(2, square2);
          
         Circle circle1 = new Circle(20, 30,50);
-        drawingPanel.addShape(3, circle1);
+        shapes.addShape(3, circle1);
         Point p1 = new Point(100, 150);
         Circle circle2 = new Circle(15, p1);
-        drawingPanel.addShape(4, circle2);
+        shapes.addShape(4, circle2);
 
         Circle circle3 = new Circle(30, 300, 300);
-        drawingPanel.addShape(5, circle3);
+        shapes.addShape(5, circle3);
 
         Circle circle4 = new Circle(45,500,67);
-        drawingPanel.addShape(6, circle4);
+        shapes.addShape(6, circle4);
 
         Point p2 = new Point(400, 600);
 
         Square square3 = new Square(67,p2);
-        drawingPanel.addShape(7, square3);
+        shapes.addShape(7, square3);
 
         Square square4 = new Square(90,300,500);
-        drawingPanel.addShape(8, square4);
+        shapes.addShape(8, square4);
         
         window.add(drawingPanel);
 
