@@ -10,6 +10,10 @@ public class Shape {
     public Shape(Point center) {
         this.center = new Point(center.getX(), center.getY());
     }
+    
+    public Point getCenter() {
+        return center;
+    }
 
     @Override
     public String toString() {
